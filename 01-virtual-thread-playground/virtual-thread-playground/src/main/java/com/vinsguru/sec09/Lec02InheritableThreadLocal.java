@@ -1,23 +1,25 @@
 package com.vinsguru.sec09;
 
+import com.vinsguru.util.CommonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Duration;
 import java.util.UUID;
 
 /*
-    A simple demo of thread local
+    A simple demo of inheritable thread local
  */
-public class Lec01ThreadLocal {
+public class Lec02InheritableThreadLocal {
 
-    private static final Logger log = LoggerFactory.getLogger(Lec01ThreadLocal.class);
-    private static final ThreadLocal<String> sessionTokenHolder = new ThreadLocal<>();
+    private static final Logger log = LoggerFactory.getLogger(Lec02InheritableThreadLocal.class);
+    private static final ThreadLocal<String> sessionTokenHolder = new InheritableThreadLocal<>();
 
     static void main(String[] args) {
 
         authFilter(() -> orderController());
-        authFilter(() -> orderController());
 
+        CommonUtils.sleep(Duration.ofSeconds(1));
     }
 
     // below code is just to demonstrate the workflow
@@ -49,8 +51,8 @@ public class Lec01ThreadLocal {
 
     private static void orderService(){
         log.info("orderService: {}", sessionTokenHolder.get());
-        callProductService();
-        callInventoryService();
+        Thread.ofVirtual().name("child-1").start(() -> callProductService());
+        Thread.ofVirtual().name("child-2").start(() -> callInventoryService());
     }
 
     // This is a client to call product service

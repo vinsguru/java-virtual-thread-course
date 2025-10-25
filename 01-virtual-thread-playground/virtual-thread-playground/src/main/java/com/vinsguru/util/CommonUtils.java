@@ -14,7 +14,7 @@ public class CommonUtils {
         try {
             Thread.sleep(duration);
         } catch (InterruptedException e) {
-            log.info("{} is cancelled", taskName);
+            log.info("{} task is cancelled", taskName);
         }
     }
 

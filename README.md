@@ -1,25 +1,29 @@
-# Java 21 - Virtual Thread MasterClass
+# Modern Java - Virtual Thread, Concurrency and Scoped Values MasterClass
 
 This repoistory contains the source code for my [**Java Virtual Thread**](https://www.udemy.com/course/java-virtual-thread/) course on Udemy.
 
+⚡ Up-to-date with JDK/Java 25: This course covers all the latest Java 25 features, including Virtual Threads, Scoped Values, and Structured Concurrency.
+
 ![](.doc/java-virtual-thread.png)
 
-Dive deep into the intricacies of concurrency & Learn how to make your Java applications run smoother and faster using simple and effective concurrency techniques. From the basics to hands-on projects, this course equips you with the skills to revolutionize your approach to programming.
+Learn how to make your Java applications run smoother, faster, and more scalable using modern concurrency techniques. This course covers everything from the fundamentals of threads to advanced structured concurrency using Virtual Threads, all with hands-on projects to cement your learning.
 
 ## Course Highlights:
 
-- **Understanding Concurrency**: Learn about the challenges of traditional threads and discover how Java Virtual Threads provide a simpler and more efficient solution for making your programs scale seamlessly.
+- **Understanding Concurrency**: Start with the basics. Understand **platform threads**, their lifecycle, and the challenges of traditional concurrency. Learn why scaling with conventional threads is difficult and how **Java Virtual Threads** provide a lightweight, high-performance alternative for handling thousands of concurrent tasks efficiently.
 
-- **Executor Service Mastery**: Dive into using Executor Service with Virtual Threads. Overcome challenges, control concurrency, and process tasks more efficiently by breaking them down into parallel subtasks.
+- **Executor Service Mastery**: Dive into **ExecutorService** and see how it works with both platform threads and virtual threads. Learn to manage concurrency, execute tasks in parallel, and optimize thread usage for scalable applications.
 
-- **Completable Future Exploration**: Explore Completable Future for asynchronous task processing with Virtual Threads. Learn practical methods, handle timeouts, and manage errors in a declarative style.
+- **Completable Future**: Explore **CompletableFuture** for asynchronous task execution with Virtual Threads. Learn practical patterns for chaining tasks, handling exceptions, and managing timeouts in a clean, declarative way.
 
-- **Preview of Structured Concurrency**: Get a sneak peek into Java's new preview APIs, giving you insights into the future of concurrent programming. Stay ahead of the curve with a simplified understanding of Java's concurrency development.
+- **ThreadLocal and Scoped Values**: Understand **ThreadLocal** for storing thread-specific context and the challenges it poses. Then explore **Scoped Values**, the modern alternative that works seamlessly with both platform and virtual threads, avoids memory leaks, and simplifies context propagation.
 
-- **Practical Application Development**: Apply what you've learned in a hands-on project using Spring Boot Web and Virtual Threads. See firsthand how these concepts integrate seamlessly into real-world application development.
+- **Preview of Structured Concurrency**: Get a hands-on introduction to Java’s **Structured Concurrency APIs** (preview), learning how to manage groups of tasks as a single unit, improve reliability, and simplify lifecycle management of concurrent tasks.
 
-- **Scalability Testing with JMeter**: Test your application's scalability using JMeter. Compare throughput and response time to ensure optimal efficiency under different conditions.
+- **Hands-On Application Development**: Apply your knowledge in a **Spring Boot Web project** using Virtual Threads. Learn how these concurrency concepts integrate into real-world application development.
+
+- **Performance Testing with JMeter**: Test the scalability of your application using **JMeter**, measuring throughput and response times to ensure optimal efficiency under various workloads.
 
 - **Migration Made Easy**: Conclude the course with a practical migration guide to transition your existing applications to Java Virtual Threads effortlessly. Get ready for a future where your programs effortlessly combine concurrency and scalability.
 
-Unlock the full potential of Java Virtual Threads and elevate your programming skills. Enroll now to reshape the way you approach scalability and performance in Java applications!
+Unlock the full potential of **Java Virtual Threads, Scoped Values, and Structured Concurrency**. Elevate your programming skills and learn to design scalable, efficient, and modern Java applications!

@@ -13,7 +13,7 @@
 
 # Package Files #
 **/*.jar
-!**/external-services-v1.jar
+!**/external-services.jar
 **/*.war
 **/*.nar
 **/*.ear
@@ -46,3 +46,4 @@
 **/mvnw
 **/mvnw.cmd
 **/node_modules/
+.DS_Store
