@@ -6,17 +6,20 @@ import com.vinsguru.tripadvisor.dto.Flight;
 import com.vinsguru.tripadvisor.dto.FlightReservationRequest;
 import com.vinsguru.tripadvisor.dto.FlightReservationResponse;
 import com.vinsguru.tripadvisor.dto.TripReservationRequest;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 
 @Service
-@RequiredArgsConstructor
 public class TripReservationService {
 
     private final FlightSearchServiceClient searchServiceClient;
     private final FlightReservationServiceClient reservationServiceClient;
+
+    public TripReservationService(FlightSearchServiceClient searchServiceClient, FlightReservationServiceClient reservationServiceClient) {
+        this.searchServiceClient = searchServiceClient;
+        this.reservationServiceClient = reservationServiceClient;
+    }
 
     public FlightReservationResponse reserve(TripReservationRequest request){
         var flights = this.searchServiceClient.getFlights(request.departure(), request.arrival());
