@@ -5,17 +5,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /*
-    Virtual Threads are indented for I/O tasks.
-    To avoid pinning with synchronized, use ReentrantLock (relevant in Java 21–23)
+ * Demo: Thread Pinning (relevant in Java 21–23)
  */
-public class Lec05ReentrantLockWithIO {
+public class Lec03ThreadPinning {
 
-    private static final Logger log = LoggerFactory.getLogger(Lec05ReentrantLockWithIO.class);
-    private static final Lock lock = new ReentrantLock();
+    private static final Logger log = LoggerFactory.getLogger(Lec03ThreadPinning.class);
 
     /*
         Use this to check if virtual threads are getting pinned in your application
@@ -57,13 +53,8 @@ public class Lec05ReentrantLockWithIO {
     }
 
     // IO Task 1 - requires synchronization
-    private static void updateSharedDocument(){
-        try{
-            lock.lock();
-            CommonUtils.sleep(Duration.ofSeconds(10));
-        }finally {
-            lock.unlock();
-        }
+    private static synchronized void updateSharedDocument(){
+        CommonUtils.sleep(Duration.ofSeconds(10));
     }
 
     // IO Task 2

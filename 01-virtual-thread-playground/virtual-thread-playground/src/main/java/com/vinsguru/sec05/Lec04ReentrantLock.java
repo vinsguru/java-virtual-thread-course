@@ -11,7 +11,9 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /*
-    Virtual Threads are indented for I/O tasks. This is a simple demo the use of ReentrantLock
+    Virtual Threads are indented for I/O tasks.
+    This is a simple demo to show that race conditions are still applicable.
+    Fix using ReentrantLock.
  */
 public class Lec04ReentrantLock {
 
@@ -19,7 +21,7 @@ public class Lec04ReentrantLock {
     private static final Lock lock = new ReentrantLock();
     private static final List<Integer> list = new ArrayList<>();
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         demo(Thread.ofVirtual());
 
@@ -44,8 +46,6 @@ public class Lec04ReentrantLock {
         try{
             lock.lock();
             list.add(1);
-        }catch (Exception e){
-            log.error("error", e);
         }finally {
             lock.unlock();
         }
